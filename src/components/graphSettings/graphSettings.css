@@ -1,0 +1,9 @@
+.Spacer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 0.5%;
+  background-color: #fafafa;
+}
