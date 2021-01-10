@@ -47,7 +47,7 @@ class graphSettings extends Component {
     }
 
     changeindexType= (e) => {
-        this.setState({ indexType: e[1] });
+         
     }
 }
  
