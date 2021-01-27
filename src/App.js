@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Canvas from './components/canvas/canvas'
 import GraphSettings from './components/graphSettings/graphSettings'
 import GraphData from './components/graphData/graphData'
+import {GraphProvider} from './components/graphContext'
 
 
 class App extends Component {
@@ -16,7 +17,8 @@ class App extends Component {
   
   render() { 
     return (
-      <div className="App">
+      <GraphProvider>
+        <div className="App">
         <span>
           <GraphSettings ></GraphSettings>
         </span>
@@ -31,6 +33,7 @@ class App extends Component {
           </CardColumns>
         </div>
       </div>
+      </GraphProvider>
     )
   }
 }

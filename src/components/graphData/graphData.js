@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component, useContext } from 'react';
 import "./graphData.css"
 import { Table, TabPane } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import GraphSettings from '../graphSettings/graphSettings'
+import {GraphContext} from '../graphContext'
 
-class graphData extends Component {
-    state = { graphWeight: 'unweighted'}
 
-    render() { 
+const GraphData = () => {
+    const [nodeList, setNodeList, edgeList, setEdgeList] = useContext(GraphContext)
+
         return (  
             <Table striped bordered hover size="sm">
                 <thead>
@@ -17,7 +18,7 @@ class graphData extends Component {
                     </tr>
                 </thead>
                 <tbody>
-                {Array.from({ length: 20 }).map((_, index) => (
+                {Array.from({ length: nodeList.length }).map((_, index) => (
                     <tr>
                      <td >{index}</td>
                      <td >1</td>
@@ -26,7 +27,6 @@ class graphData extends Component {
                 </tbody>
             </Table>
         );
-    }
 }
  
-export default graphData;
+export default GraphData;
